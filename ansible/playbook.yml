@@ -1,0 +1,15 @@
+---
+- name: Deploy to Tomcat
+  hosts: web
+  become: yes
+  tasks:
+    - name: Copy WAR file to Tomcat
+      copy:
+        src: "/var/snap/jenkins/4865/workspace/Newansible-CICD/target/Newansible.war"
+        dest: "/opt/tomcat/webapps/Newansible.war"
+        remote_src: no
+
+    - name: Restart Tomcat
+      systemd:
+        name: tomcat
+        state: restarted
