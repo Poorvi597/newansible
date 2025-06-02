@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://https://github.com/Poorvi597/newansible.git'
+                git branch: 'master', url: 'https://github.com/Poorvi597/newansible.git'
             }
         }
 
